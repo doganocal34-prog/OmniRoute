@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Drone Zoom-Out · 9:16</title>
+<style>
+  :root{ --bg:#07090c; --ink:#e9eef5; --dim:#8b97a8; --amber:#f0a952; }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; background:
+      radial-gradient(1200px 700px at 20% -10%, rgba(240,169,82,.10), transparent 60%),
+      radial-gradient(1000px 600px at 90% 110%, rgba(70,130,180,.10), transparent 60%),
+      var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    display:flex; align-items:center; justify-content:center; padding:28px;
+  }
+  .wrap{display:flex; gap:34px; align-items:center; flex-wrap:wrap; justify-content:center}
+  .phone{
+    position:relative; width:min(340px, 78vw); aspect-ratio:9/16;
+    border-radius:34px; overflow:hidden; background:#000;
+    box-shadow:0 40px 80px -20px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.08),
+               inset 0 0 0 8px #0d0f12, inset 0 0 0 9px rgba(255,255,255,.06);
+  }
+  .phone video{width:100%; height:100%; object-fit:cover; display:block}
+  .info{max-width:360px}
+  h1{font-size:22px; margin:0 0 6px; letter-spacing:-.3px; font-weight:650}
+  .sub{color:var(--dim); font-size:13.5px; line-height:1.6; margin:0 0 22px}
+  .spec{display:grid; grid-template-columns:auto 1fr; gap:8px 16px; font-size:13px; margin-bottom:24px}
+  .spec dt{color:var(--dim)}
+  .spec dd{margin:0; font-variant-numeric:tabular-nums}
+  .dl{
+    display:inline-flex; align-items:center; gap:9px; text-decoration:none;
+    background:linear-gradient(180deg,#f4b463,#e09440); color:#20160a;
+    font-weight:650; font-size:14px; padding:11px 18px; border-radius:11px;
+    box-shadow:0 10px 26px -10px rgba(240,169,82,.85); transition:transform .15s ease, filter .15s ease;
+  }
+  .dl:hover{transform:translateY(-1px); filter:brightness(1.05)}
+  .hint{margin-top:14px; color:var(--dim); font-size:12px}
+  code{background:rgba(255,255,255,.06); padding:2px 6px; border-radius:5px; font-size:11.5px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="phone">
+      <video id="v" src="OmniRoute_Drone_ZoomOut_9x16.mp4" poster="poster.jpg"
+             controls autoplay muted loop playsinline></video>
+    </div>
+    <div class="info">
+      <h1>Drone Zoom-Out · Sinematik</h1>
+      <p class="sub">Makro plandan başlayıp yağmurlu çatıya ve şehre açılan 9 saniyelik 2.5D drone geri çekilmesi.</p>
+      <dl class="spec">
+        <dt>Süre</dt><dd>9.0 sn</dd>
+        <dt>Çözünürlük</dt><dd>1080 × 1920 (9:16)</dd>
+        <dt>Kare hızı</dt><dd>30 fps</dd>
+        <dt>Kodek</dt><dd>H.264 · AAC stereo</dd>
+      </dl>
+      <a class="dl" href="OmniRoute_Drone_ZoomOut_9x16.mp4" download>
+        ⬇︎ Videoyu indir (MP4)
+      </a>
+      <p class="hint">Oynatıcı çalışmazsa dosya: <code>media/OmniRoute_Drone_ZoomOut_9x16.mp4</code></p>
+    </div>
+  </div>
+  <script>
+    // iOS/Safari sometimes needs an explicit play() after metadata
+    const v = document.getElementById('v');
+    v.addEventListener('loadeddata', () => v.play().catch(()=>{}));
+  </script>
+</body>
+</html>
